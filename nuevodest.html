@@ -1,9 +1,9 @@
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Wallet CLP - Tu billetera digital</title>
     <link rel="stylesheet" href="style.css">
+    <title>Agregar Destinatario - Wallet CLP</title>
 </head>
 <body>
 
@@ -19,35 +19,34 @@
     </header>
 
     <main>
-   <h2>Agregar nuevo destinatario</h2>
-    
-    <form action="#" method="post">
-        <div class="form-group">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre">
-        </div>
-        
-        <div class="form-group">
-            <label for="rut">RUT:</label>
-            <input type="text" id="rut" name="rut">
-        </div>
+        <h2>Agregar nuevo destinatario</h2>
 
-        <div class="form-group">
-            <label for="correo">Correo Electronico:</label>
-            <input type="text" id="correo" name="correo">
-        </div>  
-        <div class="form-group">
+        <form action="#" method="post">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+
+            <label for="rut">RUT:</label>
+            <input type="text" id="rut" name="rut" placeholder="12.345.678-9" required>
+            <br><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email">
+            <br><br>
+
             <label for="telefono">Teléfono:</label>
-            <input type="text" id="telefono" name="telefono">    
-        </div>   
-        <button type="submit">Guardar destinatario</button>
-        <button type="submit">Limpiar formulario</button>
-    </form>
-    <a href="destinatarios.html">Volver a mis destinatarios</a>
+            <input type="tel" id="telefono" name="telefono" placeholder="+569 1234 5678">
+            <br><br>
+
+            <button type="submit">Guardar destinatario</button>
+            <button type="reset">Limpiar formulario</button>
+        </form>
+
+        <p><a href="destinatarios.html">Volver a mis destinatarios</a></p>
     </main>
 
     <footer>
-        <p>Wallet CLP - Todos los derechos reservado 2026</p>
+        <p>Wallet CLP - Todos los derechos reservados 2026</p>
     </footer>
 
 </body>
