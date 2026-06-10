@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Depositar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>Wallet CLP</h1>
+        <nav>
+            <a href="transferir.html">Transferir</a>
+            <a href="destinatarios.html">Destinatarios</a>
+            <a href="recargar.html">Recargar</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="mistransferencias.html">Mis Transferencias</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Depositar Dinero</h2>
+        <hr>
+
+        <div id="alertMensaje" class="alert alert-success" hidden></div>
+
+        <div id="depositBox">
+            <div class="form-group">
+                <label>Monto a depositar:</label>
+                <input type="number" class="form-control" id="inputDeposito">
+            </div>
+            <button type="button" id="btnDepositar" class="btn btn-success">Realizar depósito</button>
+        </div>
+        
+        <br>
+        <p><a href="menu.html" class="btn btn-secondary">Volver al Menú</a></p>
+    </main>
+
+    <footer>
+        <p>Wallet CLP - Todos los derechos reservados 2026</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        var saldoActual = Number(localStorage.getItem('walletSaldo')) || 0;
+        var movimientos = JSON.parse(localStorage.getItem('walletMovimientos')) || [];
+
+        $('#btnDepositar').click(function() {
+            var monto = Number($('#inputDeposito').val());
+
+            if (monto > 0) {
+                saldoActual = saldoActual + monto;
+                localStorage.setItem('walletSaldo', saldoActual);
+                
+                var fechaActual = new Date().toLocaleDateString('es-CL');
+                movimientos.push({
+                    tipo: 'Depósito',
+                    monto: monto,
+                    fecha: fechaActual,
+                    esIngreso: true 
+                });
+                localStorage.setItem('walletMovimientos', JSON.stringify(movimientos));
+                
+                $('#alertMensaje').text('¡Depósito exitoso! Nuevo saldo: $' + saldoActual).removeAttr('hidden'); 
+                $('#inputDeposito').val('');
+            } else {
+                alert('Por favor, ingresa un monto válido.');
+            }
+        });
+    </script>
+</body>
+</html>

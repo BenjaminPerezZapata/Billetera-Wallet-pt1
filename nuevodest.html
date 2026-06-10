@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Agregar Destinatario - Wallet CLP</title>
 </head>
 <body>
@@ -10,10 +11,10 @@
     <header>
         <h1>Wallet CLP</h1>
         <nav>
-            <a href="index.html">Mi Wallet</a>
-            <a href="#">Transferir</a>
+
+            <a href="transferir.html">Transferir</a>
             <a href="destinatarios.html">Destinatarios</a>
-            <a href="#">Recargar</a>
+            <a href="recargar.html">Recargar</a>
             <a href="perfil.html">Perfil</a>
         </nav>
     </header>
@@ -23,7 +24,7 @@
 
         <form action="#" method="post">
             <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Monica Lopez" required>
             <br><br>
 
             <label for="rut">RUT:</label>
@@ -31,7 +32,7 @@
             <br><br>
 
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
             <br><br>
 
             <label for="telefono">Teléfono:</label>
@@ -42,7 +43,7 @@
             <button type="reset">Limpiar formulario</button>
         </form>
 
-        <p><a href="destinatarios.html">Volver a mis destinatarios</a></p>
+        <p><a href="destinatarios.html" class="btn btn-secondary">Volver a mis destinatarios</a></p>
     </main>
 
     <footer>
