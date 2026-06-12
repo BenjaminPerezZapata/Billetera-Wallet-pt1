@@ -39,6 +39,22 @@
     <footer>
         <p>Wallet CLP - Todos los derechos reservado 2026</p>
     </footer>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            var nuevosDestinatarios = JSON.parse(localStorage.getItem('walletDestinatarios')) || [];
+            
+            
+            if (nuevosDestinatarios.length > 0) {
+                var $lista = $('ol'); 
+                
+                nuevosDestinatarios.forEach(function(dest) {
+                    $lista.append('<li>' + dest.nombre + ' - ' + dest.rut + '</li>');
+                });
+            }
+        });
+    </script>
+</body>
 </body>
 </html>

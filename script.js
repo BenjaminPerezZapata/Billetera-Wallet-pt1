@@ -33,6 +33,21 @@ function validarFormulario() {
         }
     }
     
+   
+    let listaDestinatarios = JSON.parse(localStorage.getItem('walletDestinatarios')) || [];
+    
+    
+    listaDestinatarios.push({
+        nombre: nombre,
+        rut: rut
+    });
+    
+   
+    localStorage.setItem('walletDestinatarios', JSON.stringify(listaDestinatarios));
+    
     alert("Destinatario agregado con éxito");
-    return true;
+    
+    
+    window.location.href = "destinatarios.html";
+    return false; 
 }
